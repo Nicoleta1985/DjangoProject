@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Details of the professor {{ professor.first_name }} {{ professor.last_name }}{% endblock %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-3"><br>
+                <div class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="card text-dark" style="width: 40rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Details</h5>
+                            <p class="card-text">
+                                Full name: {{ professor.first_name }} {{ professor.last_name }}<br>
+                                Department: {{ professor.department|title }} <br>
+                                working Hours: {{ professor.time }}
+                            </p>
+                            <div class="card-footer text-center">
+                                <a href="{% url 'list_of_professors' %}" class="btn btn-primary">CANCEL</a>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

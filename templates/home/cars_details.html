@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Cars {% endblock %}
+{% block content %}
+{% for cars in all_cars %}
+    {% if cars.hibrid is True %}
+    <p>{{ cars.marca}}</p>
+    <p>{{ cars.putere}}</p>
+    <p>{{ cars.carburant}}</p>
+    <p>{{ cars.hibrid}}</p>
+    {% endif %}
+{% endfor %}
+
+<a href="{% url 'details' %}" class="btn btn-primary">Go to list of students :)</a>
+{% endblock %}
+
+
